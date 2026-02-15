@@ -50,22 +50,6 @@
             color: #3b2b7c;
         }
 
-        .top-bar .button {
-            background: linear-gradient(135deg, #3b2b7c 0%, #5e4b9e 100%);
-            border: none;
-            border-radius: 30px;
-            padding: 0.6rem 1.5rem;
-            font-weight: 500;
-            color: white;
-            box-shadow: 0 8px 15px rgba(59, 43, 124, 0.2);
-            transition: all 0.3s ease;
-        }
-
-        .top-bar .button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 20px rgba(59, 43, 124, 0.3);
-        }
-
         .page-header {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
@@ -77,13 +61,6 @@
             font-size: 3rem;
             font-weight: 800;
             margin-bottom: 1rem;
-        }
-
-        .page-header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            max-width: 600px;
-            margin: 0 auto;
         }
 
         .faq-section {
@@ -99,134 +76,47 @@
             font-weight: 600;
             margin-bottom: 2rem;
             color: #1e293b;
-            position: relative;
-            padding-bottom: 1rem;
         }
 
-        .faq-category h2:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 2px;
-        }
-
-        .accordion-item {
+        .faq-item {
             background: white;
             border-radius: 20px;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             border: 1px solid rgba(226, 232, 240, 0.6);
             overflow: hidden;
-            transition: all 0.3s ease;
         }
 
-        .accordion-item:hover {
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
-        }
-
-        .accordion-header {
+        .faq-question {
             padding: 1.5rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
             background: white;
-            transition: background 0.3s ease;
+            border-bottom: 1px solid rgba(226, 232, 240, 0.6);
         }
 
-        .accordion-header:hover {
-            background: #f8fafc;
-        }
-
-        .accordion-header h3 {
+        .faq-question h3 {
             font-size: 1.2rem;
             font-weight: 600;
             margin: 0;
-            color: #1e293b;
+            color: #3b2b7c;
         }
 
-        .accordion-header i {
-            transition: transform 0.3s ease;
-            color: #667eea;
-            font-size: 1.2rem;
-        }
-
-        .accordion-header.active i {
-            transform: rotate(180deg);
-        }
-
-        .accordion-content {
-            max-height: 0;
-            padding: 0 1.5rem;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            background: #f8fafc;
-            border-top: 1px solid transparent;
-        }
-
-        .accordion-content.show {
-            max-height: 500px;
+        .faq-answer {
             padding: 1.5rem;
-            border-top-color: rgba(226, 232, 240, 0.6);
+            background: #f8fafc;
         }
 
-        .accordion-content p {
+        .faq-answer p {
             margin: 0 0 1rem 0;
             color: #64748b;
             line-height: 1.6;
         }
 
-        .accordion-content ul {
+        .faq-answer ul, .faq-answer ol {
             margin: 0.5rem 0 0 1.5rem;
             color: #64748b;
         }
 
-        .accordion-content li {
+        .faq-answer li {
             margin-bottom: 0.5rem;
-        }
-
-        .still-questions {
-            background: white;
-            border-radius: 30px;
-            padding: 3rem;
-            text-align: center;
-            margin-top: 3rem;
-            border: 1px solid rgba(226, 232, 240, 0.6);
-        }
-
-        .still-questions h3 {
-            font-size: 2rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .still-questions p {
-            color: #64748b;
-            margin-bottom: 2rem;
-            font-size: 1.1rem;
-        }
-
-        .contact-btn {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border: none;
-            border-radius: 40px;
-            padding: 1rem 2.5rem;
-            font-weight: 600;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: inline-block;
-            text-decoration: none;
-        }
-
-        .contact-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
-            color: white;
         }
 
         .footer {
@@ -256,11 +146,6 @@
             color: #cbd5e1;
             background: transparent;
             padding-left: 0;
-        }
-
-        .footer .menu a:hover {
-            background: transparent;
-            color: white;
         }
 
         .footer hr {
@@ -307,16 +192,14 @@
     <div class="faq-section">
         <div class="grid-container">
 
-            <!-- Категория: Общие вопросы -->
             <div class="faq-category">
                 <h2>Общие вопросы</h2>
                 
-                <div class="accordion-item">
-                    <div class="accordion-header" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('show')">
+                <div class="faq-item">
+                    <div class="faq-question">
                         <h3>Как начать пользоваться TableNow?</h3>
-                        <i class="fas fa-chevron-down"></i>
                     </div>
-                    <div class="accordion-content">
+                    <div class="faq-answer">
                         <p>Для начала работы вам нужно:</p>
                         <ul>
                             <li>Нажать кнопку "Войти" в правом верхнем углу</li>
@@ -328,146 +211,68 @@
                     </div>
                 </div>
 
-                <div class="accordion-item">
-                    <div class="accordion-header" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('show')">
+                <div class="faq-item">
+                    <div class="faq-question">
                         <h3>Сколько стоит использование сервиса?</h3>
-                        <i class="fas fa-chevron-down"></i>
                     </div>
-                    <div class="accordion-content">
+                    <div class="faq-answer">
                         <p><strong>Для гостей:</strong> сервис абсолютно бесплатен. Вы платите только за заказ в ресторане.</p>
                         <p><strong>Для ресторанов:</strong> предусмотрена абонентская плата от 5000 ₽/месяц. Первые 3 месяца бесплатно при подключении.</p>
-                        <p>Никаких скрытых комиссий и дополнительных платежей.</p>
                     </div>
                 </div>
 
-                <div class="accordion-item">
-                    <div class="accordion-header" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('show')">
+                <div class="faq-item">
+                    <div class="faq-question">
                         <h3>Есть ли мобильное приложение?</h3>
-                        <i class="fas fa-chevron-down"></i>
                     </div>
-                    <div class="accordion-content">
+                    <div class="faq-answer">
                         <p>Да, наше приложение доступно в:</p>
                         <ul>
                             <li><strong>App Store</strong> (iPhone и iPad)</li>
                             <li><strong>Google Play</strong> (Android)</li>
                         </ul>
-                        <p>В приложении доступны все функции веб-версии, плюс push-уведомления о статусе брони и напоминания.</p>
-                        <p>Скачайте приложение, чтобы бронировать столики еще быстрее!</p>
+                        <p>В приложении доступны все функции веб-версии, плюс push-уведомления.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Категория: Бронирование -->
             <div class="faq-category">
                 <h2>Бронирование</h2>
                 
-                <div class="accordion-item">
-                    <div class="accordion-header" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('show')">
+                <div class="faq-item">
+                    <div class="faq-question">
                         <h3>Как забронировать столик?</h3>
-                        <i class="fas fa-chevron-down"></i>
                     </div>
-                    <div class="accordion-content">
+                    <div class="faq-answer">
                         <p>Забронировать столик очень просто:</p>
                         <ol>
                             <li>Найдите ресторан через поиск или фильтры</li>
                             <li>Выберите дату, время и количество гостей</li>
                             <li>Нажмите кнопку "Забронировать"</li>
-                            <li>Подтверждение придет мгновенно на email и в приложение</li>
+                            <li>Подтверждение придет мгновенно на email</li>
                         </ol>
-                        <p>Если на выбранное время нет мест, система покажет ближайшие доступные слоты.</p>
                     </div>
                 </div>
 
-                <div class="accordion-item">
-                    <div class="accordion-header" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('show')">
+                <div class="faq-item">
+                    <div class="faq-question">
                         <h3>Можно ли отменить бронирование?</h3>
-                        <i class="fas fa-chevron-down"></i>
                     </div>
-                    <div class="accordion-content">
-                        <p>Да, вы можете отменить бронь:</p>
-                        <ul>
-                            <li>В личном кабинете на сайте</li>
-                            <li>В мобильном приложении</li>
-                            <li>Через чат с рестораном</li>
-                        </ul>
-                        <p><strong>Важно:</strong> Рекомендуем отменять не позднее чем за 2 часа до брони, чтобы ресторан мог предложить это время другим гостям. При опоздании более чем на 30 минут ресторан может отменить бронь автоматически.</p>
-                    </div>
-                </div>
-
-                <div class="accordion-item">
-                    <div class="accordion-header" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('show')">
-                        <h3>Что делать, если я опоздаю?</h3>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="accordion-content">
-                        <p>Если вы понимаете, что опаздываете:</p>
-                        <ol>
-                            <li>Напишите в чат с рестораном (доступен в брони)</li>
-                            <li>Предупредите о задержке и укажите новое время</li>
-                            <li>Ресторан обычно удерживает бронь 15-20 минут</li>
-                        </ol>
-                        <p>Через чат можно договориться о более долгом ожидании. Рестораны идут навстречу, если их предупредить.</p>
+                    <div class="faq-answer">
+                        <p>Да, вы можете отменить бронь в личном кабинете на сайте или в мобильном приложении.</p>
+                        <p><strong>Важно:</strong> Рекомендуем отменять не позднее чем за 2 часа до брони.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Категория: Для ресторанов -->
-            <div class="faq-category">
-                <h2>Для ресторанов</h2>
-                
-                <div class="accordion-item">
-                    <div class="accordion-header" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('show')">
-                        <h3>Как добавить свой ресторан?</h3>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="accordion-content">
-                        <p>Чтобы добавить ресторан в TableNow:</p>
-                        <ol>
-                            <li>Заполните форму на странице "Для ресторанов" (в разработке)</li>
-                            <li>Или напишите нам на <strong>partners@tablenow.ru</strong></li>
-                            <li>Укажите название ресторана, адрес, контактные данные</li>
-                            <li>Мы свяжемся с вами в течение 24 часов</li>
-                        </ol>
-                        <p>После подключения вы получите доступ к личному кабинету для управления бронями.</p>
-                    </div>
-                </div>
-
-                <div class="accordion-item">
-                    <div class="accordion-header" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('show')">
-                        <h3>Сколько стоит подключение?</h3>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="accordion-content">
-                        <p>Для ресторанов действует абонентская плата:</p>
-                        <ul>
-                            <li><strong>Базовый тариф:</strong> 5 000 ₽/месяц (до 100 броней)</li>
-                            <li><strong>Про тариф:</strong> 10 000 ₽/месяц (безлимит броней)</li>
-                            <li><strong>Первые 3 месяца:</strong> бесплатно для всех новых ресторанов</li>
-                        </ul>
-                        <p>В стоимость входит: неограниченное количество бронирований, чат с гостями, доступ к статистике, напоминания гостям.</p>
-                    </div>
-                </div>
-
-                <div class="accordion-item">
-                    <div class="accordion-header" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('show')">
-                        <h3>Какая комиссия с броней?</h3>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="accordion-content">
-                        <p><strong>Комиссии нет!</strong> Вы платите только фиксированную абонентскую плату.</p>
-                        <p>Все деньги от гостей (депозиты, предоплаты) поступают напрямую ресторану. Мы не берем процент с броней.</p>
-                        <p>Это наше ключевое преимущество перед конкурентами.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="still-questions">
-                <h3>Остались вопросы?</h3>
-                <p>Не нашли ответ на свой вопрос? Свяжитесь с нами, и мы поможем!</p>
-                <a href="contacts.html" class="contact-btn">
+            <div class="faq-item" style="background: linear-gradient(135deg, #f0f2fe 0%, #e8eaf6 100%); text-align: center; padding: 2rem;">
+                <h3 style="color: #3b2b7c;">Остались вопросы?</h3>
+                <p>Свяжитесь с нами, и мы поможем!</p>
+                <a href="contacts.html" style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 1rem 2rem; border-radius: 40px; text-decoration: none; font-weight: 600; margin-top: 1rem;">
                     <i class="fas fa-envelope"></i> Написать нам
                 </a>
             </div>
+
         </div>
     </div>
 
@@ -476,12 +281,7 @@
             <div class="grid-x grid-padding-x">
                 <div class="cell medium-4">
                     <h5>TableNow</h5>
-                    <p>Умное бронирование столиков в ресторанах. Быстро, удобно, надёжно.</p>
-                    <div class="social-buttons">
-                        <a href="#" class="button broken-link"><i class="fab fa-vk"></i></a>
-                        <a href="#" class="button broken-link"><i class="fab fa-telegram-plane"></i></a>
-                        <a href="#" class="button broken-link"><i class="fab fa-instagram"></i></a>
-                    </div>
+                    <p>Умное бронирование столиков в ресторанах.</p>
                 </div>
                 <div class="cell medium-2">
                     <h5>Навигация</h5>
@@ -489,7 +289,6 @@
                         <li><a href="index.html#about">О проекте</a></li>
                         <li><a href="index.html#features">Преимущества</a></li>
                         <li><a href="index.html#how-it-works">Как это работает</a></li>
-                        <li><a href="#" class="broken-link">Блог</a></li>
                     </ul>
                 </div>
                 <div class="cell medium-3">
@@ -497,38 +296,31 @@
                     <ul class="menu vertical">
                         <li><i class="fas fa-phone"></i> +7 (999) 123-45-67</li>
                         <li><i class="fas fa-envelope"></i> hello@tablenow.ru</li>
-                        <li><i class="fas fa-map-marker-alt"></i> Москва, ул. Тверская, 1</li>
                     </ul>
                 </div>
                 <div class="cell medium-3">
                     <h5>Поддержка</h5>
                     <ul class="menu vertical">
                         <li><a href="faq.html">FAQ</a></li>
-                        <li><a href="#" class="broken-link">Пользовательское соглашение</a></li>
-                        <li><a href="#" class="broken-link">Политика конфиденциальности</a></li>
                     </ul>
                 </div>
             </div>
             <hr>
             <div class="grid-x grid-padding-x">
                 <div class="cell text-center">
-                    <p class="subheader" style="color: #64748b;">© 2025 TableNow. Все права защищены. Сделано с ❤️ для гурманов</p>
+                    <p>© 2025 TableNow. Все права защищены.</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.9.0/dist/js/foundation.min.js"></script>
     <script>
-        $(document).ready(function () {
-            $(document).foundation();
-            
-            // Плавный переход для битых ссылок
-            $('.broken-link').on('click', function(e) {
+        // Простой скрипт для битых ссылок
+        document.querySelectorAll('.broken-link').forEach(link => {
+            link.addEventListener('click', function(e) {
                 e.preventDefault();
-                $('body').css('opacity', '0');
-                setTimeout(function() {
+                document.body.style.opacity = '0';
+                setTimeout(() => {
                     window.location.href = '404.html';
                 }, 300);
             });
