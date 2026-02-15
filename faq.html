@@ -56,6 +56,7 @@
             border-radius: 30px;
             padding: 0.6rem 1.5rem;
             font-weight: 500;
+            color: white;
             box-shadow: 0 8px 15px rgba(59, 43, 124, 0.2);
             transition: all 0.3s ease;
         }
@@ -89,27 +90,8 @@
             padding: 5rem 0;
         }
 
-        .faq-search {
-            max-width: 600px;
-            margin: 0 auto 3rem;
-        }
-
-        .faq-search input {
-            border-radius: 50px;
-            padding: 1.2rem 1.5rem;
-            border: 1px solid #e2e8f0;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
-            font-size: 1.1rem;
-        }
-
-        .faq-search input:focus {
-            outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-        }
-
         .faq-category {
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
         }
 
         .faq-category h2 {
@@ -169,6 +151,7 @@
         .accordion-header i {
             transition: transform 0.3s ease;
             color: #667eea;
+            font-size: 1.2rem;
         }
 
         .accordion-header.active i {
@@ -191,9 +174,18 @@
         }
 
         .accordion-content p {
-            margin: 0;
+            margin: 0 0 1rem 0;
             color: #64748b;
             line-height: 1.6;
+        }
+
+        .accordion-content ul {
+            margin: 0.5rem 0 0 1.5rem;
+            color: #64748b;
+        }
+
+        .accordion-content li {
+            margin-bottom: 0.5rem;
         }
 
         .still-questions {
@@ -252,6 +244,7 @@
         .footer a {
             color: #cbd5e1;
             transition: all 0.2s ease;
+            text-decoration: none;
         }
 
         .footer a:hover {
@@ -273,6 +266,10 @@
         .footer hr {
             background: rgba(255, 255, 255, 0.1);
             margin: 2rem 0;
+        }
+
+        .broken-link {
+            cursor: pointer;
         }
     </style>
 </head>
@@ -309,41 +306,53 @@
 
     <div class="faq-section">
         <div class="grid-container">
-            <div class="faq-search">
-                <input type="text" id="faqSearch" placeholder="🔍 Поиск по вопросам...">
-            </div>
 
             <!-- Категория: Общие вопросы -->
             <div class="faq-category">
                 <h2>Общие вопросы</h2>
                 
                 <div class="accordion-item">
-                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <div class="accordion-header" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('show')">
                         <h3>Как начать пользоваться TableNow?</h3>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="accordion-content">
-                        <p>Для начала работы вам нужно зарегистрироваться на сайте (кнопка "Войти" в правом верхнем углу). После регистрации вы сможете сразу бронировать столики. Для бронирования не требуется подтверждение email, но мы рекомендуем его подтвердить, чтобы получать уведомления о статусе брони.</p>
+                        <p>Для начала работы вам нужно:</p>
+                        <ul>
+                            <li>Нажать кнопку "Войти" в правом верхнем углу</li>
+                            <li>Зарегистрироваться (или войти, если уже есть аккаунт)</li>
+                            <li>Подтвердить email (на указанную почту придет письмо)</li>
+                            <li>Заполнить профиль (можно добавить фото и контактные данные)</li>
+                        </ul>
+                        <p>После регистрации вы сможете сразу бронировать столики. Все функции доступны бесплатно.</p>
                     </div>
                 </div>
 
                 <div class="accordion-item">
-                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <div class="accordion-header" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('show')">
                         <h3>Сколько стоит использование сервиса?</h3>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="accordion-content">
-                        <p>Для гостей сервис абсолютно бесплатен. Вы платите только за заказ в ресторане. Для ресторанов предусмотрена абонентская плата, первые 3 месяца бесплатно при подключении.</p>
+                        <p><strong>Для гостей:</strong> сервис абсолютно бесплатен. Вы платите только за заказ в ресторане.</p>
+                        <p><strong>Для ресторанов:</strong> предусмотрена абонентская плата от 5000 ₽/месяц. Первые 3 месяца бесплатно при подключении.</p>
+                        <p>Никаких скрытых комиссий и дополнительных платежей.</p>
                     </div>
                 </div>
 
                 <div class="accordion-item">
-                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <div class="accordion-header" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('show')">
                         <h3>Есть ли мобильное приложение?</h3>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="accordion-content">
-                        <p>Да, наше приложение доступно в App Store и Google Play. Скачайте его, чтобы бронировать столики еще быстрее и получать push-уведомления о статусе брони.</p>
+                        <p>Да, наше приложение доступно в:</p>
+                        <ul>
+                            <li><strong>App Store</strong> (iPhone и iPad)</li>
+                            <li><strong>Google Play</strong> (Android)</li>
+                        </ul>
+                        <p>В приложении доступны все функции веб-версии, плюс push-уведомления о статусе брони и напоминания.</p>
+                        <p>Скачайте приложение, чтобы бронировать столики еще быстрее!</p>
                     </div>
                 </div>
             </div>
@@ -353,57 +362,101 @@
                 <h2>Бронирование</h2>
                 
                 <div class="accordion-item">
-                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <div class="accordion-header" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('show')">
                         <h3>Как забронировать столик?</h3>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="accordion-content">
-                        <p>Выберите ресторан, укажите дату, время и количество гостей, нажмите "Забронировать". Подтверждение придет мгновенно. Если на выбранное время нет мест, система покажет ближайшие доступные слоты.</p>
+                        <p>Забронировать столик очень просто:</p>
+                        <ol>
+                            <li>Найдите ресторан через поиск или фильтры</li>
+                            <li>Выберите дату, время и количество гостей</li>
+                            <li>Нажмите кнопку "Забронировать"</li>
+                            <li>Подтверждение придет мгновенно на email и в приложение</li>
+                        </ol>
+                        <p>Если на выбранное время нет мест, система покажет ближайшие доступные слоты.</p>
                     </div>
                 </div>
 
                 <div class="accordion-item">
-                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <div class="accordion-header" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('show')">
                         <h3>Можно ли отменить бронирование?</h3>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="accordion-content">
-                        <p>Да, вы можете отменить бронь в личном кабинете или через чат с рестораном. Рекомендуем отменять не позднее чем за 2 часа до брони, чтобы ресторан мог предложить это время другим гостям.</p>
+                        <p>Да, вы можете отменить бронь:</p>
+                        <ul>
+                            <li>В личном кабинете на сайте</li>
+                            <li>В мобильном приложении</li>
+                            <li>Через чат с рестораном</li>
+                        </ul>
+                        <p><strong>Важно:</strong> Рекомендуем отменять не позднее чем за 2 часа до брони, чтобы ресторан мог предложить это время другим гостям. При опоздании более чем на 30 минут ресторан может отменить бронь автоматически.</p>
                     </div>
                 </div>
 
                 <div class="accordion-item">
-                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <div class="accordion-header" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('show')">
                         <h3>Что делать, если я опоздаю?</h3>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="accordion-content">
-                        <p>Напишите в чат с рестораном, предупредите о задержке. Обычно рестораны удерживают бронь 15-20 минут, но через чат можно договориться о более долгом ожидании.</p>
+                        <p>Если вы понимаете, что опаздываете:</p>
+                        <ol>
+                            <li>Напишите в чат с рестораном (доступен в брони)</li>
+                            <li>Предупредите о задержке и укажите новое время</li>
+                            <li>Ресторан обычно удерживает бронь 15-20 минут</li>
+                        </ol>
+                        <p>Через чат можно договориться о более долгом ожидании. Рестораны идут навстречу, если их предупредить.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Категория: Рестораны -->
+            <!-- Категория: Для ресторанов -->
             <div class="faq-category">
                 <h2>Для ресторанов</h2>
                 
                 <div class="accordion-item">
-                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <div class="accordion-header" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('show')">
                         <h3>Как добавить свой ресторан?</h3>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="accordion-content">
-                        <p>Заполните форму на странице "Для ресторанов" или напишите нам на partners@tablenow.ru. Мы свяжемся с вами в течение 24 часов для подключения.</p>
+                        <p>Чтобы добавить ресторан в TableNow:</p>
+                        <ol>
+                            <li>Заполните форму на странице "Для ресторанов" (в разработке)</li>
+                            <li>Или напишите нам на <strong>partners@tablenow.ru</strong></li>
+                            <li>Укажите название ресторана, адрес, контактные данные</li>
+                            <li>Мы свяжемся с вами в течение 24 часов</li>
+                        </ol>
+                        <p>После подключения вы получите доступ к личному кабинету для управления бронями.</p>
                     </div>
                 </div>
 
                 <div class="accordion-item">
-                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <div class="accordion-header" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('show')">
                         <h3>Сколько стоит подключение?</h3>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="accordion-content">
-                        <p>Для ресторанов действует абонентская плата от 5000 ₽/месяц. Первые 3 месяца бесплатно. В стоимость входит неограниченное количество бронирований, чат с гостями и доступ к статистике.</p>
+                        <p>Для ресторанов действует абонентская плата:</p>
+                        <ul>
+                            <li><strong>Базовый тариф:</strong> 5 000 ₽/месяц (до 100 броней)</li>
+                            <li><strong>Про тариф:</strong> 10 000 ₽/месяц (безлимит броней)</li>
+                            <li><strong>Первые 3 месяца:</strong> бесплатно для всех новых ресторанов</li>
+                        </ul>
+                        <p>В стоимость входит: неограниченное количество бронирований, чат с гостями, доступ к статистике, напоминания гостям.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('show')">
+                        <h3>Какая комиссия с броней?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>Комиссии нет!</strong> Вы платите только фиксированную абонентскую плату.</p>
+                        <p>Все деньги от гостей (депозиты, предоплаты) поступают напрямую ресторану. Мы не берем процент с броней.</p>
+                        <p>Это наше ключевое преимущество перед конкурентами.</p>
                     </div>
                 </div>
             </div>
@@ -470,27 +523,14 @@
     <script>
         $(document).ready(function () {
             $(document).foundation();
-        });
-
-        function toggleAccordion(header) {
-            header.classList.toggle('active');
-            var content = header.nextElementSibling;
-            content.classList.toggle('show');
-        }
-
-        document.getElementById('faqSearch').addEventListener('keyup', function() {
-            var searchTerm = this.value.toLowerCase();
-            var items = document.querySelectorAll('.accordion-item');
             
-            items.forEach(function(item) {
-                var question = item.querySelector('h3').textContent.toLowerCase();
-                var answer = item.querySelector('p').textContent.toLowerCase();
-                
-                if (question.includes(searchTerm) || answer.includes(searchTerm)) {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
-                }
+            // Плавный переход для битых ссылок
+            $('.broken-link').on('click', function(e) {
+                e.preventDefault();
+                $('body').css('opacity', '0');
+                setTimeout(function() {
+                    window.location.href = '404.html';
+                }, 300);
             });
         });
     </script>
