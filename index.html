@@ -22,6 +22,7 @@
         body {
             color: #1e293b;
             background-color: #f8fafc;
+            transition: opacity 0.5s ease;
         }
 
         /* Стили для фиксированной навигации */
@@ -127,6 +128,8 @@
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
             transition: all 0.3s ease;
             margin-right: 1rem;
+            cursor: pointer;
+            display: inline-block;
         }
 
         .hero-button:hover {
@@ -144,11 +147,14 @@
             font-weight: 600;
             font-size: 1.1rem;
             transition: all 0.3s ease;
+            cursor: pointer;
+            display: inline-block;
         }
 
         .hero-button-outline:hover {
             background: rgba(255, 255, 255, 0.1);
             border-color: white;
+            transform: translateY(-3px);
         }
 
         /* Общие стили секций */
@@ -297,6 +303,7 @@
         .footer a {
             color: #cbd5e1;
             transition: all 0.2s ease;
+            text-decoration: none;
         }
 
         .footer a:hover {
@@ -340,6 +347,11 @@
             margin: 2rem 0;
         }
 
+        /* Стили для битых ссылок */
+        .broken-link {
+            cursor: pointer;
+        }
+
         /* Адаптивность */
         @media (max-width: 640px) {
             .hero-title {
@@ -368,16 +380,16 @@
                 <div class="top-bar-left">
                     <ul class="menu">
                         <li class="menu-text">TableNow</li>
-                        <li><a href="#about">О проекте</a></li>
-                        <li><a href="#features">Преимущества</a></li>
-                        <li><a href="#how-it-works">Как это работает</a></li>
-                        <li><a href="contacts.html">Контакты</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="index.html#about" class="nav-link">О проекте</a></li>
+                        <li><a href="index.html#features" class="nav-link">Преимущества</a></li>
+                        <li><a href="index.html#how-it-works" class="nav-link">Как это работает</a></li>
+                        <li><a href="contacts.html" class="nav-link">Контакты</a></li>
+                        <li><a href="faq.html" class="nav-link">FAQ</a></li>
                     </ul>
                 </div>
                 <div class="top-bar-right">
                     <ul class="menu">
-                        <li><a href="#" class="button">Войти</a></li>
+                        <li><a href="#" class="button broken-link">Войти</a></li>
                     </ul>
                 </div>
             </div>
@@ -393,8 +405,8 @@
                     <p class="hero-subtitle">TableNow — умный сервис бронирования с чатом, фильтрами и мгновенным
                         подтверждением</p>
                     <div>
-                        <a href="#" class="hero-button"><i class="fas fa-calendar-check"></i> Найти столик</a>
-                        <a href="#about" class="hero-button-outline"><i class="fas fa-play"></i> Как это работает</a>
+                        <a href="#" class="hero-button broken-link"><i class="fas fa-calendar-check"></i> Найти столик</a>
+                        <a href="index.html#about" class="hero-button-outline"><i class="fas fa-play"></i> Как это работает</a>
                     </div>
                 </div>
             </div>
@@ -535,18 +547,18 @@
                     <h5>TableNow</h5>
                     <p>Умное бронирование столиков в ресторанах. Быстро, удобно, надёжно.</p>
                     <div class="social-buttons">
-                        <a href="#" class="button"><i class="fab fa-vk"></i></a>
-                        <a href="#" class="button"><i class="fab fa-telegram-plane"></i></a>
-                        <a href="#" class="button"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="button broken-link"><i class="fab fa-vk"></i></a>
+                        <a href="#" class="button broken-link"><i class="fab fa-telegram-plane"></i></a>
+                        <a href="#" class="button broken-link"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
                 <div class="cell medium-2">
                     <h5>Навигация</h5>
                     <ul class="menu vertical">
-                        <li><a href="#about">О проекте</a></li>
-                        <li><a href="#features">Преимущества</a></li>
-                        <li><a href="#how-it-works">Как это работает</a></li>
-                        <li><a href="#">Блог</a></li>
+                        <li><a href="index.html#about" class="footer-link">О проекте</a></li>
+                        <li><a href="index.html#features" class="footer-link">Преимущества</a></li>
+                        <li><a href="index.html#how-it-works" class="footer-link">Как это работает</a></li>
+                        <li><a href="#" class="footer-link broken-link">Блог</a></li>
                     </ul>
                 </div>
                 <div class="cell medium-3">
@@ -560,9 +572,9 @@
                 <div class="cell medium-3">
                     <h5>Поддержка</h5>
                     <ul class="menu vertical">
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Пользовательское соглашение</a></li>
-                        <li><a href="#">Политика конфиденциальности</a></li>
+                        <li><a href="faq.html" class="footer-link">FAQ</a></li>
+                        <li><a href="#" class="footer-link broken-link">Пользовательское соглашение</a></li>
+                        <li><a href="#" class="footer-link broken-link">Политика конфиденциальности</a></li>
                     </ul>
                 </div>
             </div>
@@ -580,23 +592,74 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.9.0/dist/js/foundation.min.js"></script>
 
-    <!-- Плавный скролл для рабочих кнопок -->
+    <!-- Скрипт для плавных переходов и обработки ссылок -->
     <script>
         $(document).ready(function () {
             $(document).foundation();
 
-            // Плавный скролл при клике на ссылки меню
-            $('a[href^="#"]').on('click', function (event) {
-                var target = $(this.getAttribute('href'));
-                if (target.length) {
-                    event.preventDefault();
-                    $('html, body').stop().animate({
-                        scrollTop: target.offset().top - 80
-                    }, 800);
+            // Плавное появление страницы
+            $('body').css('opacity', '0');
+            $('body').animate({ opacity: 1 }, 600);
+
+            // Функция плавного перехода на другую страницу
+            function smoothTransition(url) {
+                $('body').animate({ opacity: 0 }, 400, function() {
+                    window.location.href = url;
+                });
+            }
+
+            // Функция плавного скролла
+            function smoothScroll(target) {
+                $('html, body').stop().animate({
+                    scrollTop: $(target).offset().top - 80
+                }, 800);
+            }
+
+            // Обработка кликов по рабочим ссылкам
+            $('a.nav-link, a.footer-link').on('click', function(e) {
+                var href = $(this).attr('href');
+                
+                // Если ссылка ведет на другую страницу
+                if (href === 'contacts.html' || href === 'faq.html' || href === 'index.html') {
+                    e.preventDefault();
+                    smoothTransition(href);
+                }
+                
+                // Если ссылка с якорем на этой же странице
+                if (href.includes('#')) {
+                    e.preventDefault();
+                    var anchor = href.split('#')[1];
+                    if ($('#' + anchor).length) {
+                        smoothScroll('#' + anchor);
+                    } else {
+                        // Если якорь не найден (например, на другой странице)
+                        smoothTransition(href);
+                    }
+                }
+            });
+
+            // Обработка битых ссылок (переход на 404)
+            $('.broken-link').on('click', function(e) {
+                e.preventDefault();
+                smoothTransition('404.html');
+            });
+
+            // Обработка кликов по кнопкам в герой-секции
+            $('.hero-button, .hero-button-outline').on('click', function(e) {
+                var href = $(this).attr('href');
+                
+                if ($(this).hasClass('broken-link')) {
+                    e.preventDefault();
+                    smoothTransition('404.html');
+                } else if (href && href.includes('#')) {
+                    e.preventDefault();
+                    var anchor = href.split('#')[1];
+                    if ($('#' + anchor).length) {
+                        smoothScroll('#' + anchor);
+                    }
                 }
             });
         });
     </script>
 </body>
-
 </html>
