@@ -3,411 +3,234 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 — Страница не найдена | TableNow</title>
+    <title>TableNow — Страница не найдена</title>
 
-    <!-- Подключение Foundation CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.9.0/dist/css/foundation.min.css">
-
-    <!-- Font Awesome для иконок -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <style>
-        * {
-            font-family: 'Inter', sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { font-family: 'Inter', sans-serif; }
+        body { color: #1e293b; background-color: #f8fafc; min-height: 100vh; display: flex; align-items: center; justify-content: center; }
 
-        body {
-            color: #1e293b;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* Анимированный фон */
-        .bg-bubbles {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-        }
-
-        .bg-bubbles li {
-            position: absolute;
-            list-style: none;
-            display: block;
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
-            bottom: -160px;
-            animation: square 25s infinite;
-            transition-timing-function: linear;
-            border-radius: 50%;
-        }
-
-        .bg-bubbles li:nth-child(1) {
-            left: 10%;
-            width: 80px;
-            height: 80px;
-            animation-delay: 0s;
-            animation-duration: 12s;
-        }
-
-        .bg-bubbles li:nth-child(2) {
-            left: 20%;
-            width: 40px;
-            height: 40px;
-            animation-delay: 2s;
-            animation-duration: 10s;
-        }
-
-        .bg-bubbles li:nth-child(3) {
-            left: 25%;
-            width: 120px;
-            height: 120px;
-            animation-delay: 4s;
-            animation-duration: 18s;
-        }
-
-        .bg-bubbles li:nth-child(4) {
-            left: 40%;
-            width: 60px;
-            height: 60px;
-            animation-delay: 0s;
-            animation-duration: 15s;
-        }
-
-        .bg-bubbles li:nth-child(5) {
-            left: 70%;
-            width: 50px;
-            height: 50px;
-            animation-delay: 0s;
-            animation-duration: 25s;
-        }
-
-        .bg-bubbles li:nth-child(6) {
-            left: 80%;
-            width: 100px;
-            height: 100px;
-            animation-delay: 3s;
-            animation-duration: 20s;
-        }
-
-        .bg-bubbles li:nth-child(7) {
-            left: 32%;
-            width: 30px;
-            height: 30px;
-            animation-delay: 7s;
-            animation-duration: 8s;
-        }
-
-        .bg-bubbles li:nth-child(8) {
-            left: 55%;
-            width: 70px;
-            height: 70px;
-            animation-delay: 15s;
-            animation-duration: 30s;
-        }
-
-        .bg-bubbles li:nth-child(9) {
-            left: 15%;
-            width: 45px;
-            height: 45px;
-            animation-delay: 2s;
-            animation-duration: 15s;
-        }
-
-        .bg-bubbles li:nth-child(10) {
-            left: 90%;
-            width: 90px;
-            height: 90px;
-            animation-delay: 1s;
-            animation-duration: 22s;
-        }
-
-        @keyframes square {
-            0% {
-                transform: translateY(0) rotate(0deg);
-                opacity: 1;
-                border-radius: 50%;
-            }
-            100% {
-                transform: translateY(-1000px) rotate(720deg);
-                opacity: 0;
-                border-radius: 50%;
-            }
-        }
-
-        /* Основной контент */
         .error-container {
-            position: relative;
-            z-index: 10;
             text-align: center;
-            color: white;
             padding: 2rem;
-            max-width: 800px;
-            margin: 0 auto;
+            max-width: 600px;
         }
 
         .error-code {
-            font-size: 15rem;
+            font-size: 12rem;
             font-weight: 800;
             line-height: 1;
-            text-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-            margin-bottom: 0;
-            letter-spacing: -10px;
-            animation: glitch 3s infinite;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+            animation: float 3s ease-in-out infinite;
         }
 
-        @keyframes glitch {
-            0%, 100% { transform: skew(0deg, 0deg); opacity: 1; }
-            95% { transform: skew(0deg, 0deg); opacity: 1; }
-            96% { transform: skew(10deg, 2deg); opacity: 0.8; }
-            97% { transform: skew(-10deg, -2deg); opacity: 0.9; }
-            98% { transform: skew(5deg, 1deg); opacity: 0.8; }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
         }
 
         .error-title {
             font-size: 2.5rem;
-            font-weight: 600;
+            font-weight: 700;
             margin-bottom: 1rem;
-            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            color: #1e293b;
         }
 
         .error-message {
             font-size: 1.2rem;
-            opacity: 0.9;
-            margin-bottom: 2.5rem;
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
+            color: #64748b;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .error-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 40px;
+            padding: 1rem 2rem;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+            color: white;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #3b2b7c;
+            border: 2px solid #667eea;
+            border-radius: 40px;
+            padding: 1rem 2rem;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-outline:hover {
+            background: #f0f2fe;
+            transform: translateY(-2px);
         }
 
         .search-box {
             max-width: 400px;
             margin: 2rem auto;
-            position: relative;
         }
 
         .search-box input {
-            width: 100%;
-            padding: 1.2rem 1.5rem;
-            border: none;
             border-radius: 50px;
+            padding: 1rem 1.5rem;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
             font-size: 1rem;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
+            width: 100%;
         }
 
         .search-box input:focus {
             outline: none;
-            transform: scale(1.02);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
         }
 
-        .search-box i {
-            position: absolute;
-            right: 1.5rem;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #94a3b8;
-            font-size: 1.2rem;
+        .popular-links {
+            margin-top: 2rem;
         }
 
-        .button-group {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin: 2rem 0;
-        }
-
-        .primary-button {
-            background: white;
-            color: #3b2b7c;
-            border: none;
-            border-radius: 40px;
-            padding: 1rem 2.5rem;
-            font-weight: 600;
-            font-size: 1.1rem;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            text-decoration: none;
-        }
-
-        .primary-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 20px 35px rgba(0, 0, 0, 0.25);
-            background: #f8f9fa;
-        }
-
-        .outline-button {
-            background: transparent;
-            color: white;
-            border: 2px solid rgba(255, 255, 255, 0.5);
-            border-radius: 40px;
-            padding: 1rem 2.5rem;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            text-decoration: none;
-        }
-
-        .outline-button:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: white;
-            transform: translateY(-3px);
-        }
-
-        .help-links {
-            margin-top: 3rem;
-        }
-
-        .help-links a {
-            color: white;
-            text-decoration: none;
+        .popular-links a {
+            color: #64748b;
             margin: 0 1rem;
-            opacity: 0.8;
-            transition: all 0.2s ease;
-            font-size: 1rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
         }
 
-        .help-links a:hover {
-            opacity: 1;
+        .popular-links a:hover {
+            color: #667eea;
             text-decoration: underline;
-        }
-
-        .help-links i {
-            margin-right: 0.3rem;
         }
 
         .fun-fact {
             margin-top: 3rem;
-            padding: 1rem;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50px;
-            display: inline-block;
-            font-size: 0.9rem;
-            backdrop-filter: blur(5px);
+            padding: 2rem;
+            background: white;
+            border-radius: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+            border: 1px solid rgba(226, 232, 240, 0.6);
+        }
+
+        .fun-fact i {
+            color: #667eea;
+            margin-right: 0.5rem;
         }
 
         @media (max-width: 640px) {
-            .error-code {
-                font-size: 10rem;
-                letter-spacing: -5px;
-            }
-            
-            .error-title {
-                font-size: 1.8rem;
-            }
-            
-            .button-group {
-                flex-direction: column;
-            }
-            
-            .primary-button, .outline-button {
-                width: 100%;
-                justify-content: center;
-            }
+            .error-code { font-size: 8rem; }
+            .error-title { font-size: 2rem; }
+            .error-actions { flex-direction: column; }
+            .btn-primary, .btn-outline { width: 100%; }
         }
     </style>
 </head>
 <body>
-    <!-- Анимированные пузырьки на фоне -->
-    <ul class="bg-bubbles">
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-    </ul>
 
     <div class="error-container">
         <div class="error-code">404</div>
+        
         <h1 class="error-title">Страница не найдена</h1>
+        
         <p class="error-message">
-            Возможно, эта страница была удалена или перемещена. <br>
-            Но не переживайте, у нас есть много других интересных мест!
+            Возможно, эта страница была удалена или перемещена.<br>
+            Но не волнуйтесь, у нас есть много отличных ресторанов!
         </p>
 
-        <!-- Поиск (демо-режим) -->
-        <div class="search-box">
-            <input type="text" placeholder="Поиск по сайту..." id="searchInput">
-            <i class="fas fa-search"></i>
+        <div style="margin: 2rem 0; display: flex; justify-content: center; gap: 1rem;">
+            <i class="fas fa-utensils fa-3x" style="color: #667eea; animation: bounce 2s infinite;"></i>
+            <i class="fas fa-wine-glass-alt fa-3x" style="color: #764ba2; animation: bounce 2s infinite 0.3s;"></i>
+            <i class="fas fa-calendar-check fa-3x" style="color: #667eea; animation: bounce 2s infinite 0.6s;"></i>
         </div>
 
-        <!-- Кнопки действий -->
-        <div class="button-group">
-            <a href="index.html" class="primary-button">
+        <div class="error-actions">
+            <a href="index.html" class="btn-primary">
                 <i class="fas fa-home"></i> На главную
             </a>
-            <a href="contacts.html" class="outline-button">
+            <a href="contacts.html" class="btn-outline">
                 <i class="fas fa-envelope"></i> Связаться с нами
             </a>
         </div>
 
-        <!-- Полезные ссылки -->
-        <div class="help-links">
-            <a href="index.html#about"><i class="fas fa-info-circle"></i> О проекте</a>
-            <a href="faq.html"><i class="fas fa-question-circle"></i> FAQ</a>
-            <a href="index.html#features"><i class="fas fa-star"></i> Преимущества</a>
+        <div class="search-box">
+            <input type="text" id="search404" placeholder="🔍 Поиск ресторанов...">
         </div>
 
-        <!-- Забавный факт (поднимает настроение) -->
-        <div class="fun-fact">
-            <i class="fas fa-lightbulb"></i> 
-            Кстати, 404 — это не ошибка, а просто повод исследовать что-то новое!
+        <div class="popular-links">
+            <p style="margin-bottom: 1rem; color: #64748b;">Популярные направления:</p>
+            <div>
+                <a href="index.html#features">Преимущества</a>
+                <a href="index.html#how-it-works">Как это работает</a>
+                <a href="faq.html">FAQ</a>
+                <a href="contacts.html">Контакты</a>
+            </div>
+        </div>
+
+        <div class="fun-fact" id="funFact">
+            <i class="fas fa-lightbulb"></i>
+            <span>Знаете ли вы? Через TableNow бронируют более 10 000 столиков каждый месяц!</span>
         </div>
     </div>
 
-    <!-- Подключаем jQuery (для демо-поиска) -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.9.0/dist/js/foundation.min.js"></script>
-
     <script>
         $(document).ready(function() {
-            $(document).foundation();
+            const facts = [
+                "Через TableNow бронируют более 10 000 столиков каждый месяц!",
+                "Средняя оценка ресторанов на TableNow — 4.8 из 5!",
+                "Более 500 ресторанов уже с нами!",
+                "Самый популярный ресторан — «Пушкинъ» в Москве!",
+                "95% гостей готовы вернуться и бронировать снова!"
+            ];
 
-            // Демо-поиск (просто показывает сообщение)
-            $('#searchInput').on('keypress', function(e) {
-                if (e.which === 13) { // Enter key
-                    e.preventDefault();
-                    alert('Поиск пока в разработке, но вы можете найти всё на главной! 😊');
-                    $(this).val('');
+            function updateFact() {
+                let randomIndex = Math.floor(Math.random() * facts.length);
+                $('#funFact span').text(facts[randomIndex]);
+            }
+
+            setInterval(updateFact, 5000);
+
+            $('#search404').on('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    let query = $(this).val();
+                    if (query.trim()) {
+                        alert(`🔍 Ищем рестораны в "${query}"...`);
+                        window.location.href = 'index.html';
+                    } else {
+                        $(this).css('border-color', '#ef4444');
+                        setTimeout(() => $(this).css('border-color', ''), 1000);
+                    }
                 }
             });
-
-            // Небольшая анимация для пузырьков при наведении
-            $('.bg-bubbles li').hover(
-                function() {
-                    $(this).css('animation-duration', '5s');
-                },
-                function() {
-                    $(this).css('animation-duration', '');
-                }
-            );
         });
     </script>
 </body>
