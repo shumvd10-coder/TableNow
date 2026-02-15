@@ -4,157 +4,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TableNow — Часто задаваемые вопросы</title>
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.9.0/dist/css/foundation.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
     <style>
         * { font-family: 'Inter', sans-serif; }
         body { color: #1e293b; background-color: #f8fafc; }
-
         .site-header {
             position: sticky;
             top: 0;
             z-index: 100;
             background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
             border-bottom: 1px solid rgba(226, 232, 240, 0.6);
         }
-
         .top-bar {
             background: transparent;
             padding: 0.8rem 0;
         }
-
         .top-bar .menu-text {
             font-weight: 700;
             font-size: 1.5rem;
             color: #3b2b7c;
-            letter-spacing: -0.5px;
         }
-
         .top-bar .menu a {
             color: #334155;
             font-weight: 500;
-            transition: all 0.2s ease;
-            border-radius: 30px;
             padding: 0.5rem 1rem;
-            margin: 0 0.2rem;
         }
-
-        .top-bar .menu a:hover {
-            background: linear-gradient(135deg, #f0f2fe 0%, #e8eaf6 100%);
-            color: #3b2b7c;
-        }
-
         .page-header {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             padding: 4rem 0;
             text-align: center;
         }
-
         .page-header h1 {
             font-size: 3rem;
             font-weight: 800;
-            margin-bottom: 1rem;
         }
-
         .faq-section {
             padding: 5rem 0;
         }
-
-        .faq-category {
-            margin-bottom: 4rem;
-        }
-
-        .faq-category h2 {
-            font-size: 2rem;
-            font-weight: 600;
-            margin-bottom: 2rem;
-            color: #1e293b;
-        }
-
         .faq-item {
             background: white;
             border-radius: 20px;
-            margin-bottom: 1.5rem;
-            border: 1px solid rgba(226, 232, 240, 0.6);
-            overflow: hidden;
+            margin-bottom: 2rem;
+            padding: 2rem;
+            border: 1px solid #e2e8f0;
         }
-
         .faq-question {
-            padding: 1.5rem;
-            background: white;
-            border-bottom: 1px solid rgba(226, 232, 240, 0.6);
-        }
-
-        .faq-question h3 {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             font-weight: 600;
-            margin: 0;
             color: #3b2b7c;
+            margin-bottom: 1rem;
         }
-
         .faq-answer {
-            padding: 1.5rem;
-            background: #f8fafc;
-        }
-
-        .faq-answer p {
-            margin: 0 0 1rem 0;
-            color: #64748b;
+            color: #475569;
             line-height: 1.6;
+            font-size: 1.1rem;
         }
-
-        .faq-answer ul, .faq-answer ol {
-            margin: 0.5rem 0 0 1.5rem;
-            color: #64748b;
-        }
-
-        .faq-answer li {
-            margin-bottom: 0.5rem;
-        }
-
         .footer {
             background: #0f172a;
             color: #cbd5e1;
             padding: 4rem 0 2rem;
         }
-
         .footer h5 {
             color: white;
-            font-weight: 600;
             margin-bottom: 1.5rem;
         }
-
         .footer a {
             color: #cbd5e1;
-            transition: all 0.2s ease;
-            text-decoration: none;
-        }
-
-        .footer a:hover {
-            color: white;
-            text-decoration: underline;
-        }
-
-        .footer .menu a {
-            color: #cbd5e1;
-            background: transparent;
-            padding-left: 0;
-        }
-
-        .footer hr {
-            background: rgba(255, 255, 255, 0.1);
-            margin: 2rem 0;
-        }
-
-        .broken-link {
-            cursor: pointer;
         }
     </style>
 </head>
@@ -175,7 +95,7 @@
                 </div>
                 <div class="top-bar-right">
                     <ul class="menu">
-                        <li><a href="#" class="button broken-link">Войти</a></li>
+                        <li><a href="404.html" class="button">Войти</a></li>
                     </ul>
                 </div>
             </div>
@@ -185,92 +105,68 @@
     <div class="page-header">
         <div class="grid-container">
             <h1>Часто задаваемые вопросы</h1>
-            <p>Найдите ответы на популярные вопросы о сервисе TableNow</p>
+            <p>Ответы на популярные вопросы о TableNow</p>
         </div>
     </div>
 
     <div class="faq-section">
         <div class="grid-container">
+            
+            <h2 style="font-size: 2rem; margin-bottom: 2rem;">Общие вопросы</h2>
 
-            <div class="faq-category">
-                <h2>Общие вопросы</h2>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>Как начать пользоваться TableNow?</h3>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Для начала работы вам нужно:</p>
-                        <ul>
-                            <li>Нажать кнопку "Войти" в правом верхнем углу</li>
-                            <li>Зарегистрироваться (или войти, если уже есть аккаунт)</li>
-                            <li>Подтвердить email (на указанную почту придет письмо)</li>
-                            <li>Заполнить профиль (можно добавить фото и контактные данные)</li>
-                        </ul>
-                        <p>После регистрации вы сможете сразу бронировать столики. Все функции доступны бесплатно.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>Сколько стоит использование сервиса?</h3>
-                    </div>
-                    <div class="faq-answer">
-                        <p><strong>Для гостей:</strong> сервис абсолютно бесплатен. Вы платите только за заказ в ресторане.</p>
-                        <p><strong>Для ресторанов:</strong> предусмотрена абонентская плата от 5000 ₽/месяц. Первые 3 месяца бесплатно при подключении.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>Есть ли мобильное приложение?</h3>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Да, наше приложение доступно в:</p>
-                        <ul>
-                            <li><strong>App Store</strong> (iPhone и iPad)</li>
-                            <li><strong>Google Play</strong> (Android)</li>
-                        </ul>
-                        <p>В приложении доступны все функции веб-версии, плюс push-уведомления.</p>
-                    </div>
+            <div class="faq-item">
+                <div class="faq-question">❓ Как начать пользоваться TableNow?</div>
+                <div class="faq-answer">
+                    1. Нажмите кнопку "Войти" в правом верхнем углу<br>
+                    2. Зарегистрируйтесь (укажите email и пароль)<br>
+                    3. Подтвердите email (письмо придет на почту)<br>
+                    4. Начните бронировать столики! Это бесплатно.
                 </div>
             </div>
 
-            <div class="faq-category">
-                <h2>Бронирование</h2>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>Как забронировать столик?</h3>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Забронировать столик очень просто:</p>
-                        <ol>
-                            <li>Найдите ресторан через поиск или фильтры</li>
-                            <li>Выберите дату, время и количество гостей</li>
-                            <li>Нажмите кнопку "Забронировать"</li>
-                            <li>Подтверждение придет мгновенно на email</li>
-                        </ol>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>Можно ли отменить бронирование?</h3>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Да, вы можете отменить бронь в личном кабинете на сайте или в мобильном приложении.</p>
-                        <p><strong>Важно:</strong> Рекомендуем отменять не позднее чем за 2 часа до брони.</p>
-                    </div>
+            <div class="faq-item">
+                <div class="faq-question">❓ Сколько стоит использование сервиса?</div>
+                <div class="faq-answer">
+                    Для гостей — <strong>абсолютно бесплатно</strong>. Вы платите только за еду в ресторане.<br>
+                    Для ресторанов — от 5000 ₽/месяц (первые 3 месяца бесплатно).
                 </div>
             </div>
 
-            <div class="faq-item" style="background: linear-gradient(135deg, #f0f2fe 0%, #e8eaf6 100%); text-align: center; padding: 2rem;">
-                <h3 style="color: #3b2b7c;">Остались вопросы?</h3>
-                <p>Свяжитесь с нами, и мы поможем!</p>
-                <a href="contacts.html" style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 1rem 2rem; border-radius: 40px; text-decoration: none; font-weight: 600; margin-top: 1rem;">
-                    <i class="fas fa-envelope"></i> Написать нам
-                </a>
+            <div class="faq-item">
+                <div class="faq-question">❓ Есть ли мобильное приложение?</div>
+                <div class="faq-answer">
+                    Да! Скачайте наше приложение:<br>
+                    📱 iPhone: в App Store<br>
+                    📱 Android: в Google Play<br>
+                    Все функции синхронизируются с веб-версией.
+                </div>
+            </div>
+
+            <h2 style="font-size: 2rem; margin: 3rem 0 2rem;">Бронирование</h2>
+
+            <div class="faq-item">
+                <div class="faq-question">❓ Как забронировать столик?</div>
+                <div class="faq-answer">
+                    1. Найдите ресторан через поиск<br>
+                    2. Выберите дату, время и количество гостей<br>
+                    3. Нажмите "Забронировать"<br>
+                    4. Получите подтверждение на email
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">❓ Можно ли отменить бронирование?</div>
+                <div class="faq-answer">
+                    Да, отменить можно в личном кабинете.<br>
+                    ⏰ Рекомендуем отменять не позднее чем за 2 часа до визита.
+                </div>
+            </div>
+
+            <div class="faq-item" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                <div class="faq-question" style="color: white;">❓ Остались вопросы?</div>
+                <div class="faq-answer" style="color: white;">
+                    Напишите нам на hello@tablenow.ru или <a href="contacts.html" style="color: white; font-weight: bold;">заполните форму обратной связи</a>.
+                </div>
             </div>
 
         </div>
@@ -281,21 +177,20 @@
             <div class="grid-x grid-padding-x">
                 <div class="cell medium-4">
                     <h5>TableNow</h5>
-                    <p>Умное бронирование столиков в ресторанах.</p>
+                    <p>Умное бронирование столиков</p>
                 </div>
                 <div class="cell medium-2">
                     <h5>Навигация</h5>
                     <ul class="menu vertical">
                         <li><a href="index.html#about">О проекте</a></li>
                         <li><a href="index.html#features">Преимущества</a></li>
-                        <li><a href="index.html#how-it-works">Как это работает</a></li>
                     </ul>
                 </div>
                 <div class="cell medium-3">
                     <h5>Контакты</h5>
                     <ul class="menu vertical">
-                        <li><i class="fas fa-phone"></i> +7 (999) 123-45-67</li>
-                        <li><i class="fas fa-envelope"></i> hello@tablenow.ru</li>
+                        <li>📞 +7 (999) 123-45-67</li>
+                        <li>✉️ hello@tablenow.ru</li>
                     </ul>
                 </div>
                 <div class="cell medium-3">
@@ -306,25 +201,11 @@
                 </div>
             </div>
             <hr>
-            <div class="grid-x grid-padding-x">
-                <div class="cell text-center">
-                    <p>© 2025 TableNow. Все права защищены.</p>
-                </div>
+            <div class="text-center">
+                <p>© 2025 TableNow</p>
             </div>
         </div>
     </div>
 
-    <script>
-        // Простой скрипт для битых ссылок
-        document.querySelectorAll('.broken-link').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.body.style.opacity = '0';
-                setTimeout(() => {
-                    window.location.href = '404.html';
-                }, 300);
-            });
-        });
-    </script>
 </body>
 </html>
